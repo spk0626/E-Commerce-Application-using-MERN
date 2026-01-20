@@ -17,7 +17,8 @@ import {
   USER_UPDATE_PROFILE_SUCCESS,
 } from "../constants/userConstants";
 
-const API_URL = (process.env.REACT_APP_API_URL || "/api").replace(/\/$/, "");
+const baseUrl = (process.env.REACT_APP_API_URL || "/api").replace(/\/+$/, "");
+const API_URL = baseUrl.endsWith("/api") ? baseUrl : `${baseUrl}/api`;
 
 export const logout = () => (dispatch) => {
   localStorage.removeItem("userInfo");

@@ -11,7 +11,8 @@ import {
   ORDER_LIST_MY_FAIL,
 } from "../constants/orderConstant";
 
-const API_URL = (process.env.REACT_APP_API_URL || "/api").replace(/\/$/, "");
+const baseUrl = (process.env.REACT_APP_API_URL || "/api").replace(/\/+$/, "");
+const API_URL = baseUrl.endsWith("/api") ? baseUrl : `${baseUrl}/api`;
 
 export const createOrder = (order) => async (dispatch, getState) => {
   try {
