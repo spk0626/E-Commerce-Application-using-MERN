@@ -19,11 +19,8 @@ const app = express();
 //middleware bodyparser
 app.use(express.json());
 
-// CORS configuration
-app.use(cors({
-  origin: process.env.FRONTEND_URL || "*",
-  credentials: true
-}));
+// CORS configuration - allow all origins
+app.use(cors());
 
 app.get('/', (req, res) => {
     res.send('<h1>Welcome to Node Server</h1>');
