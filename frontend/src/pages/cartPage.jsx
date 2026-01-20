@@ -38,7 +38,7 @@ const CartPage = () => {
         dispatch(addToCart(id, qty));
       }
     }
-  }, [dispatch, id, qty]);
+  }, [dispatch, id, qty, navigate, userInfo]);
 
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
