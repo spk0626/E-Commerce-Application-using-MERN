@@ -11,6 +11,8 @@ import {
   ORDER_LIST_MY_FAIL,
 } from "../constants/orderConstant";
 
+const API_URL = process.env.REACT_APP_API_URL || "/api";
+
 export const createOrder = (order) => async (dispatch, getState) => {
   try {
     dispatch({
@@ -25,7 +27,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.post("/api/orders", order, config);
+    const { data } = await axios.post(`${API_URL}/orders`, order, config);
     dispatch({ type: ORDER_CREATE_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
@@ -52,7 +54,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.get(`/api/orders/${id}`, config);
+    const { data } = await axios.get(`${API_URL}/orders/${id}`, config);
     dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
@@ -80,7 +82,7 @@ export const listMyOrders = () => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.get("/api/orders/myorders", config);
+    const { data } = await axios.get(`${API_URL}/orders/myorders`, config);
     dispatch({ type: ORDER_LIST_MY_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
