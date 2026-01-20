@@ -8,7 +8,7 @@ import {
   PRODUCT_DETAILS_FAILS,
 } from "../constants/productConstant";
 
-const API_URL = process.env.REACT_APP_API_URL || "/api";
+const API_URL = (process.env.REACT_APP_API_URL || "/api").replace(/\/$/, "");
 
 export const listProducts = () => async (dispatch) => {
   try {
