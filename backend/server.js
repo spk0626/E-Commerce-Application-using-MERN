@@ -2,6 +2,7 @@ const express = require("express");
 const { errorHandler } = require("./middlewares/errorMiddleware");
 const dotenv = require('dotenv');
 const path = require('path');
+const cors = require('cors');
 const connectDb = require("./config/config");
 const productRoutes = require('./routes/productRoutes');
 const userRoutes = require("./routes/userRoute");
@@ -17,6 +18,12 @@ const app = express();
 
 //middleware bodyparser
 app.use(express.json());
+
+// CORS configuration
+app.use(cors({
+  origin: process.env.FRONTEND_URL || "*",
+  credentials: true
+}));
 
 app.get('/', (req, res) => {
     res.send('<h1>Welcome to Node Server</h1>');
