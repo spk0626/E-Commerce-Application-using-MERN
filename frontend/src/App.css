@@ -1,0 +1,46 @@
+/* Global Styles */
+:root {
+  --primary-green: #27AE60;
+  --secondary-green: #229954;
+  --light-green: #D5F4E6;
+  --accent-green: #52BE80;
+  --dark-bg: #0B3D0B;
+  --light-bg: #F8FAF5;
+  --text-dark: #1A3A1A;
+  --text-light: #555555;
+  --border-color: #D0D0D0;
+  --shadow: 0 4px 12px rgba(39, 174, 96, 0.15);
+  --shadow-hover: 0 8px 24px rgba(39, 174, 96, 0.25);
+}
+
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, var(--light-bg) 0%, #FFFBF0 100%);
+  color: var(--text-dark);
+}
+
+main {
+  min-height: 80vh;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, var(--light-bg) 100%);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-green);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-green);
+}

@@ -19,17 +19,46 @@ const HomeScreen = () => {
     
     return (
         <>
-            <Row>
-                <i className="fa-brands fa-pagelines" style={{color: "#8FD400", fontSize: "24px", marginTop:"10px", marginLeft:"285px"}}></i>
-                <h1 style={{ color: "#8FD400", marginTop:"-40px", marginLeft:"20px" }} >Your Garden</h1>
-            </Row>
+            <div style={{
+                padding: '40px 0',
+                marginBottom: '30px',
+                background: 'linear-gradient(135deg, #D5F4E6 0%, rgba(39, 174, 96, 0.1) 100%)',
+                borderRadius: '12px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '15px',
+                marginLeft: '-12px',
+                marginRight: '-12px',
+                paddingLeft: '20px'
+            }}>
+                <i className="fa-solid fa-leaf" style={{
+                    color: "#27AE60", 
+                    fontSize: "48px"
+                }}></i>
+                <div>
+                    <h1 style={{ 
+                        color: "#27AE60", 
+                        margin: '0',
+                        fontWeight: '700',
+                        fontSize: '40px',
+                        letterSpacing: '1px'
+                    }}>Your Garden</h1>
+                    <p style={{
+                        color: "#52BE80",
+                        margin: '5px 0 0 0',
+                        fontSize: '16px',
+                        fontWeight: '500'
+                    }}>Explore our beautiful collection of plants & gardening tools</p>
+                </div>
+            </div>
+
             {
                 loading ? (<Loader />) : error ? (<Message variant="danger">{error}</Message>) :
-               (    <Row>
+               (    <Row style={{marginTop: '30px'}}>
                         {products.map
                             ((product) =>
                                 (
-                                    <Col key={product._id} md={2}>
+                                    <Col key={product._id} md={2} xs={6} style={{marginBottom: '25px'}}>
                                         <ProductPage product={product} />
                                     </Col>
                                 )

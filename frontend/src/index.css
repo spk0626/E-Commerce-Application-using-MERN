@@ -1,3 +1,128 @@
-main{
-  min-height: 80vh;
+/* Footer styling */
+footer {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #1a5d1a 100%);
+  color: #FFFFFF;
+  padding: 40px 20px;
+  margin-top: 50px;
+  text-align: center;
+  border-top: 3px solid var(--primary-green);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+footer span {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Button Styles */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--secondary-green) 0%, #1a6d4a 100%);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, var(--accent-green) 0%, var(--primary-green) 100%);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+  transform: translateY(-2px);
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px 12px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+  outline: none;
+}
+
+/* Table styling */
+table {
+  border-collapse: collapse;
+}
+
+table thead {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+  color: white;
+}
+
+table tbody tr {
+  border-bottom: 1px solid var(--border-color);
+  transition: background 0.2s ease;
+}
+
+table tbody tr:hover {
+  background: var(--light-green);
+}
+
+table td {
+  padding: 12px;
+}
+
+/* Alert Messages */
+.alert-danger {
+  background: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
+  border: none;
+  color: white;
+  border-radius: 8px;
+}
+
+.alert-success {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+  border: none;
+  color: white;
+  border-radius: 8px;
+}
+
+.alert-info {
+  background: linear-gradient(135deg, #3498DB 0%, #2980B9 100%);
+  border: none;
+  color: white;
+  border-radius: 8px;
+}
+
+/* Link styling */
+a {
+  color: var(--primary-green);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-green);
+  text-decoration: none;
 }

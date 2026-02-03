@@ -16,28 +16,45 @@ const Header = () => {
 
     return (
         <>
-            <Navbar bg="dark" expand="lg" variant="dark" collapseOnSelect>
+            <Navbar style={{
+                background: 'linear-gradient(135deg, #27AE60 0%, #229954 100%)',
+                boxShadow: '0 4px 12px rgba(39, 174, 96, 0.2)'
+            }} expand="lg" variant="dark" collapseOnSelect sticky="top">
                 <Container>
 
                     <LinkContainer to="/">
-                        <Navbar.Brand>
-                            <i className="fa-solid fa-house" style={{marginRight: '10px' }}></i>
-                            HOME
+                        <Navbar.Brand style={{
+                            fontSize: '24px',
+                            fontWeight: 'bold',
+                            letterSpacing: '1px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '10px'
+                        }}>
+                            <i className="fa-solid fa-leaf" style={{fontSize: '28px'}}></i>
+                            Your Garden
                         </Navbar.Brand>
                     </LinkContainer>
 
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ml-auto">
-                            <LinkContainer to="/cart" style={{ marginLeft: '1000px', marginRight:"10px" }}>
-                                <Nav.Link >
+                        <Nav className="ms-auto">
+                            <LinkContainer to="/cart" style={{ marginRight:"20px" }}>
+                                <Nav.Link style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '8px',
+                                    fontSize: '16px',
+                                    fontWeight: '500',
+                                    transition: 'all 0.3s ease'
+                                }} className="nav-link-hover">
                                     <i className="fa-solid fa-cart-shopping"></i>
-                                    &nbsp; CART
+                                    CART
                                 </Nav.Link>
                             </LinkContainer>
                             
                             {userInfo ? (
-                                <NavDropdown title={userInfo.name}>
+                                <NavDropdown title={userInfo.name} id="user-dropdown" style={{fontWeight: '500'}}>
                                     <LinkContainer to="/profile">
                                         <NavDropdown.Item>
                                             <i className="fa-solid fa-user"  style={{marginRight:"10px"}}></i>
@@ -51,9 +68,15 @@ const Header = () => {
                                 </NavDropdown>
                             ) : (
                                 <LinkContainer to="/login">
-                                    <Nav.Link>
+                                    <Nav.Link style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '8px',
+                                        fontSize: '16px',
+                                        fontWeight: '500'
+                                    }}>
                                         <i className="fas fa-user"></i>
-                                        &nbsp; SIGN-IN
+                                        SIGN-IN
                                     </Nav.Link>
                                 </LinkContainer>
                             )}
@@ -61,6 +84,12 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
+            <style>{`
+                .nav-link-hover:hover {
+                    opacity: 0.9;
+                    transform: scale(1.05);
+                }
+            `}</style>
         </>
     );
 };
