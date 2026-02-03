@@ -37,7 +37,7 @@ const ProductPage = ({ product }) => {
               justifyContent: 'center',
               overflow: 'hidden'
             }}>
-              <Link to={`/product/${product._id}`} style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+              <Link to={`/product/${product._id}`} style={{width: '100%', display: 'flex', justifyContent: 'center', textDecoration: 'none'}}>
                 <Card.Img src={product.image} variant="top" style={{ 
                   maxHeight: "150px",
                   objectFit: 'contain',
@@ -60,7 +60,7 @@ const ProductPage = ({ product }) => {
               padding: '16px'
             }}>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: '12px' }}>
-                <Link to={`/product/${product._id}`} style={{width: '100%'}}>
+                <Link to={`/product/${product._id}`} style={{width: '100%', textDecoration: 'none'}}>
                   <Card.Title as="div" className="text-center" style={{
                     color: '#1A3A1A',
                     fontWeight: '600',

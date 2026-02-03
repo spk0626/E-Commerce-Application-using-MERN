@@ -22,9 +22,8 @@ const ProductDetails = () => {
     
 
     useEffect(() => {
-      
-            dispatch(listProductDetails(id));
-        
+        setQty(1);
+        dispatch(listProductDetails(id));
     },[dispatch, id]); 
 
     const addToCartHandler = () => {
